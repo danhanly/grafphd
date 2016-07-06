@@ -4,15 +4,11 @@ services:
     image: grafana/grafana
     ports:
       - "3000:3000"
-    expose:
-      - "8125"
     depends_on:
       - graphite
   graphite:
     image: hopsoft/graphite-statsd
     restart: always
-    expose:
-      - "8125"
     ports:
       - "5000:80"
       - "2003-2004:2003-2004"
